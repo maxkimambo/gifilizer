@@ -22,13 +22,9 @@ public class UploadController {
 
     private final static Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
-
+    //TODO: put this into env variables
     private String FileLocation = "/home/max/dev/gifilizer/tmp";
 
-    @GetMapping(value="/")
-    public String index(){
-        return "Ok";
-    }
     @PostMapping(value = "/upload", produces = MediaType.IMAGE_GIF_VALUE)
     public String Upload(@RequestParam("file")MultipartFile file) throws IOException {
 
